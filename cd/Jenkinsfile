@@ -8,6 +8,7 @@ pipeline {
           if ("${container_status}" ==  "true")
           {
             sh 'docker rm -f myapplication'
+            echo "Hello"
           }
           sh """
             docker run -itd --name myapplication -p 80:8080 tomcat:8.0
